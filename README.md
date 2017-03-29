@@ -1,6 +1,6 @@
 # After manufacturing, what?
 
-Web version: https://nikostsafos.github.io/stateEmployment/
+Web version: https://nikostsafos.github.io/afterManufacturing/
 
 The American economy has been reshaped in the last three quarters of a century—and no change has been more profound than the shift from manufacturing to services. What exactly does the American worker do instead? If not manufacturing, what?
 
