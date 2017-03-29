@@ -68,14 +68,16 @@ p {
   width: 70%;
 }
 
-text {
-  font-size: 70%;
-}
+a { text-decoration: none;}
 
 /********** D3 **********/
 
 .xaxis, .yaxis, .label {
   font-size: 90%;
+}
+
+text {
+  font-size: 80%;
 }
 
 .graphFootnote {
@@ -108,6 +110,7 @@ text {
 @media only screen and (max-width: 960px) {
 
   #content {
+    font-size: 70%
     width: 80%;
     margin: auto;
     line-height: 2em;
