@@ -38,18 +38,18 @@ header {
   margin: 0px auto;
 }
 
-header h1 {
+header h1, h2, h3 {
   text-align: center;
-  margin-top: 0px;
-  margin-bottom: 5px;
+  margin: 0px 0px 5px 0px;
 }
 
 /********** Headings **********/
 h2, h3, h4 {
-  font-size: 100%;
   text-align: center;
-  margin: 0px 0px;
 }
+
+h2 {font-size:120%;}
+h3 {font-size:100%}
 
 /********** Body **********/
 body {
@@ -74,10 +74,6 @@ text {
 
 /********** D3 **********/
 
-#graphEmployment, #graphLaborForce {
-  display: inline;
-
-}
 .xaxis, .yaxis, .label {
   font-size: 90%;
 }
@@ -106,38 +102,6 @@ text {
 
 .bar:hover {
   fill: #bcbcbc ;
-}
-
-/********** PANELS **********/
-.tab-panel { display: none;}
-
-.tab-panel.active {
-  display: block;
-  text-align: center;
-}
-
-.tab-panel p { margin: 20px;}
-
-.tab-list {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
-.tab-list li{
-  display: inline-table;
-  text-align: center;
-  list-style: none;
-  border-bottom: 3px;
-  color: #000;
-}
-
-.tab-list a {
- color: #000;
- text-decoration: none; 
- padding: 0px 15px 0px;
- display: block;
- list-style: none;
 }
 
 /********** Mobile compatibility **********/
