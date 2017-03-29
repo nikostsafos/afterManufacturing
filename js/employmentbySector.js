@@ -12,7 +12,7 @@ var plotHeight;
   else if (contentWidth >= 500) {plotHeight = contentWidth/4.05;} 
   else { plotHeight = contentWidth/2.05; }
 
-  var margin = {top: 20, right: 20, bottom: 20, left: 20},
+  var margin = {top: 30, right: 20, bottom: 20, left: 20},
       width = plotWidth - margin.left - margin.right,
       height = plotHeight - margin.top - margin.bottom;
 
@@ -58,7 +58,7 @@ var plotHeight;
             
       svg.append("text")
           .attr("x", width/2)
-          .attr("y", 0)
+          .attr("y", -5)
           .attr('text-anchor', 'middle')
           .text(function(d) { return d.key; });
 

@@ -80,8 +80,6 @@ var plotHeight;
          .call(d3.axisLeft(y)
          .ticks(6));
 
-      console.log(sectors);
-
     });
       
     function type(d) {
