@@ -138,9 +138,9 @@ text {
   stroke-width: 2;
 }
 
-.bar:hover {
+/*.bar:hover {
   fill: #bcbcbc ;
-}
+}*/
 
 /********** Mobile compatibility **********/
 @media only screen and (max-width: 960px) {
