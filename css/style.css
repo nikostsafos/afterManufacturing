@@ -70,6 +70,42 @@ p {
 
 a { text-decoration: none;}
 
+/********** Table **********/
+
+table {
+  font-size: 90%;
+  width: 75%;
+  text-align: right;
+  margin: auto;
+  border-spacing: 00px;
+}
+
+th {
+  text-align: center;
+  border-bottom: 1px solid ;
+  }
+
+.greyHeader {
+  background-color: #e0e0e0; ;
+}
+
+.greyHeaderTwo {
+  text-align: right;
+}
+
+tr.bottomRow td {
+  border-bottom: 1px solid ;
+}
+
+td.rowLeft, th.rowLeft {
+  text-align: left; 
+}
+
+td.rowLeftIndent {
+    text-align: left;
+    text-indent: 15px;
+}
+
 /********** D3 **********/
 
 .xaxis, .yaxis, .label {
@@ -93,12 +129,12 @@ text {
 }
 
 .path {
-  fill: #e0e0e0;  
+  fill: #c7eae5;  
 }
 
 .line {
   fill: none;
-  stroke: #ca0020;
+  stroke: #8c510a;
   stroke-width: 2;
 }
 
@@ -130,3 +166,10 @@ text {
     margin: auto;
     line-height: 2em;
   }
+
+  table {
+  width: 95%;
+  text-align: right;
+  margin: auto;
+  margin-bottom: 15px;
+}
