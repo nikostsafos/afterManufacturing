@@ -151,6 +151,12 @@ text {
     margin: auto;
     line-height: 2em;
   }
+
+  table {
+  width: 85%;
+  text-align: right;
+  margin: auto;
+}
   
 }
 
@@ -171,5 +177,4 @@ text {
   width: 95%;
   text-align: right;
   margin: auto;
-  margin-bottom: 15px;
 }
