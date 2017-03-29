@@ -1,0 +1,834 @@
+Employment, Hours, and Earnings--National (CE)
+				     ce.txt
+
+Section Listing
+
+1. Survey Definition
+2. FTP files listed in the survey directory.
+3. Time series, series file, data file, & mapping file definitions and relationships
+4. Series file format and field definitions
+5. Data file format and field definitions
+6. Mapping file formats and field definitions
+7. Data Element Dictionary
+
+================================================================================
+Section 1
+================================================================================
+
+The following is a definition of:  EMPLOYMENT, HOURS, AND EARNINGS--NATIONAL (CE)
+
+Survey Description:  The Current Employment Statistics Program provides 
+employment, paid hours, and earnings information on a national basis in 
+considerable industrial detail.  The Bureau of Labor Statistics collects data 
+each month from a sample of establishments in all nonfarm activities including 
+government.
+
+The data include series for total employment; number of women employees; number of 
+production or nonsupervisory employees; and for both all employees and for 
+production and nonsupervisory employees, average hourly earnings, average weekly 
+hours, average weekly earnings, and average weekly overtime hours.  Overtime hours
+are produced for manufacturing industries only.
+
+A sample of approximately 145,000 businesses and government agencies representing
+approximately 557,000 worksites throughout the United States is utilized for this 
+monthly survey.  For hours and earnings of production or nonsupervisory workers 
+in private, nonagricultural industries, the sample contains about 270,000 employer 
+units.
+
+All employment, hours and earnings series are classified according to the 
+2012 North American Industry Classification System (NAICS).  The industry 
+code used in the survey corresponds to the NAICS code, except in those cases 
+where more than one NAICS has been combined.
+
+Summary of Data Available:  For all employees, women, and production or 
+nonsupervisory employees, over 4,400 published monthly employment series are 
+available.  The series for all employees include more than 900 industries seasonally
+adjusted and over 900 not seasonally adjusted at various levels of aggregation.
+
+About 6,800 series are published each month for average weekly earnings, average
+hourly earnings, average weekly hours, and, in manufacturing, average weekly 
+overtime hours.
+
+Hours and earnings data are available for about 600 industries.
+
+Over 5300 special derivative series such as indexes and constant dollar series are 
+also available.
+
+
+Most employment series begin in 1990, although some are available from 1939
+to the present.
+
+Employment by major industry sector is available from 1939.
+
+
+Frequency of Observations:  Data series are monthly in almost all cases; quarterly 
+averages are available for total employment, average weekly hours, and average 
+overtime hours, seasonally adjusted (datatypes 19, 20, 25, 36, and 37).
+
+Annual Averages:  Annual averages are available for all series, which are not 
+adjusted for seasonality.
+
+Data Characteristics:  Earnings are measured in dollars and are stored with 
+two decimal places.  Average weekly and overtime hours are measured in hours 
+and are stored with one decimal place.
+
+Employment is measured in thousands of workers and is stored with one 
+decimal place for three-digit NAICS and lower-level industries; other employment 
+data are stored with no decimal place.
+
+Special characteristics of the data are footnoted where necessary.
+New Footnote  I indicates that the seasonally adjusted series is independently seasonally
+adjusted and is not used in aggregating to higher summary industries.  For all employees,
+higher summary series, such as total nonfarm, are aggregated for the 3-digit NAICS level.
+
+
+Updating Schedule:  Updates are usually available on the third Friday 
+following the reporting week (week containing the 12th) in the reference 
+month.  These updates contain first estimates for the reference month, second 
+estimates for the month preceding the reference month, and third estimates for 
+the month two months prior to the reference month.
+
+Each year with the release of January estimates in February, CES data are re-
+anchored to universe counts of nonfarm employment or benchmarks for the most recent 
+March. All not seasonally adjusted series are subject to revision back to the prior 
+year’s benchmarked data (21 months of data), while 5 years of seasonally adjusted 
+estimates may be revised.
+
+
+References:	BLS Handbook of Methods, Chapter 2, "Employment, hours, and
+		earnings from the establishment survey", 
+		http://www.bls.gov/opub/hom/pdf/homch2.pdf
+
+==================================================================================
+Section 2
+==================================================================================
+
+The following Employment, Hours, and Earnings--National files are on the BLS 
+internet in the sub-directory pub/time.series/ce:
+
+(Note:  Many series have both seasonally adjusted and not seasonally adjusted data.  All seasonally
+ adjusted data (series beginning with CES) will precede all nonseasonally adjusted data
+ (series beginning with CEU) regardless of industry and datatype.
+
+
+       	
+	ce.data.0.ALL_CES_Series	  -  Seasonal, Unseasonal, All datatype codes,
+					     all industries, all years
+	ce.data.AE_Hours_Earnings	  -  Seasonal, Unseasonal, All supersectors excluding 
+		                             government (supersector code = 05,06,08,10,20,
+                                             30,40,41,42,43,44,50,55,60,65,70,80), 
+                                             All employee hours and earnings
+                                             ,03,04,11,12,13,15,
+                                             16,17,19,20,56,57,58), 2006-Present
+	ce.data.PW_aggregate_hours_earnings- Seasonal, Unseasonal, All supersectors excluding 
+		                             government (supersector code = 05,06,08,10,20,
+                                             30,40,41,42,43,44,50,55,60,65,70,80), aggregate hours 
+                                             and earnings for Production employees, 	
+	                                     (data_type_code = 81,82,83), 1964-Present  
+	ce.data.01.CurrentSeasAE		  -  Seasonal, All Employees (data_type_code 
+				     	     = 01), 1990-Present
+	ce.data.02.CurrentSeasPWWW	  -  Seasonal, Women and Production Workers 
+				     	     (data_type_code = 10, 06), 1990-Present
+	ce.data.03.CurrentSeasOther	  -  Seasonal, Other, 1990-Present
+	ce.data.04.HistorySeasAE		  -  Seasonal, All Employees (data_type_code = 
+				     	     01), Pre-1990
+	ce.data.05.HistorySeasPWWW	  -  Seasonal, Women and Production Workers 
+				      	     (data_type_code = 10, 06), Pre-1990
+	ce.data.06.HistorySeasOther	  -  Seasonal, Other, Pre-1990
+	ce.data.07.TotMinConAECurr	  -  Seasonal,Unseasonal, Total, Tot priv, Goods- 
+				     	     prod, Mining and Logging, 
+					     Construction (supersector  
+				     	     00, 05, 06, 10, 20), All Employees code = 
+					     (data_type_code = 01), 1990-Present
+	ce.data.08.ManufactureAECurr	  -  Seasonal,Unseasonal, Manufacturing (supersector
+				     	     code = 30, 31, 32), All Employees 
+		 			     (data_type_code = 01), 1990-Present
+	ce.data.09.ServProvTradeAECurr     - Seasonal,Unseasonal, Service-providing, Trade (supersector 
+				     	     code = 07, 08, 40 - 42), All Employees 
+				     	     (data_type_code = 01), 1990-Present
+	ce.data.10.TransWhUtsAECurr	  -  Seasonal,Unseasonal, Transportation and Warehousing,
+					     Utilities (supersector code = 43 - 44),
+					     All Employees (data_type_code = 01), 
+					     1990-Present
+	ce.data.11.InfoAECurr		  -  Seasonal,Unseasonal, Information (supersector code
+					     = 50), All Employees (data_type_code = 
+					     01), 1990-Present
+	ce.data.12.FinActAECurr		  -  Seasonal,Unseasonal, Financial Activities (supersector
+					     code = 55), All Employees (data_type_code = 
+				     	     01), 1990-Present
+	ce.data.13.ProfBusAECurr	  -  Seasonal,Unseasonal, Professional and Business Services
+					     (supersector code = 60), All Employees 
+					     (data_type_code = 01), 1990-Present
+	ce.data.14.EducHealthAECurr	  -  Seasonal,Unseasonal, Education and Health Services
+					     (supersector code = 65), All Employees 
+					     (data_type_code = 01), 1990-Present
+	ce.data.15.LeisHospAECurr	  -  Seasonal,Unseasonal, Leisure and Hospitality
+					     (supersector code = 70), All Employees 
+					     (data_type_code = 01), 1990-Present
+	ce.data.16.OtherServicesAECurr	  -  Seasonal,Unseasonal, Other Services (supersector code = 
+				     	     80), All Employees (data_type_code = 01),
+				     	     1990-Present
+	ce.data.17.GovtAECurr		  -  Seasonal,Unseasonal, Government (supersector code = 
+				     	     90), All Employees (data_type_code = 
+				     	     01), 1990-Present
+	ce.data.18.TotMinConWWPWCurr	  -  Seasonal,Unseasonal, Total, Tot priv, Goods-prod,
+				     	     Mining and Logging, Construction 
+					     (supersector code = 00, 05, 06, 10, 20), 
+					     Women, Production Workers (data_type_code 
+					     = 10, 06), 1990-Present
+	ce.data.19.ManufactureWWPWCurr	  -  Seasonal,Unseasonal, Manufacturing (supersector
+				     	     code = 30, 31, 32), Women, Production  
+				     	     Workers (data_type_code = 10, 06), 
+				     	     1990-Present
+	ce.data.20.ServProvTradeWWPWCurr  -  Seasonal,Unseasonal, Service-providing, Trade (supersector 
+				     	     code = 07, 08, 40 - 42), Women, Production 
+				     	     Workers (data_type_code = 10, 06), 
+				     	     1990-Present
+	ce.data.21.TransWhUtsWWPWCurr	  -  Seasonal,Unseasonal, Transportation and warehousing,
+					     Utilities (supersector code = 43 - 44), 
+					     Women, Production Workers (data_type_code 
+					     = 10, 06), 1990-Present
+	ce.data.22.InfoWWPWCurr		  -  Seasonal,Unseasonal, Information (supersector code 
+					     = 50), Women, Production Workers (data_type_code 
+					     = 10, 06), 1990-Present
+	ce.data.23.FinActWWPWCurr	  -  Seasonal,Unseasonal, Financial Activities (supersector 
+					     code = 55), Women, Production Workers 
+					     (data_type_code = 10, 06), 1990-Present
+	ce.data.24.ProfBusWWPWCurr	  -  Seasonal,Unseasonal, Professional and Business Services
+					     (supersector code = 60), Women, Production 
+					     Workers (data_type_code = 10, 06), 1990-Present
+	ce.data.25.EducHealthWWPWCurr	  -  Seasonal,Unseasonal, Education and Health Services
+                                             (supersector code = 65), Women, Production 
+					     Workers (data_type_code = 10, 06), 1990-Present
+	ce.data.26.LeisHospWWPWCurr	  -  Seasonal,Unseasonal, Leisure and Hospitality 
+					     (supersector code = 70), Women, Production 
+					     Workers (data_type_code = 10, 06), 1990-Present
+	ce.data.27.OtherServicesWWPWCurr  -  Seasonal,Unseasonal, Other Services (supersector code = 
+					     80), Women, Production Workers (data_type_code 
+					     = 10, 06), 1990-Present
+	ce.data.28.GovtWWCurr		  -  Seasonal,Unseasonal, Government (supersector code = 
+					     90), Women, (data_type_code = 10), 
+					     1990-Present
+	ce.data.29.TotMinConAHECurr	  -  Seasonal,Unseasonal, Total priv, Goods-prod, 
+				     	     Mining and Logging, Construction 
+					     (supersector code = 05, 06, 10, 20), 
+					     Avg Hourly Earnings (data_type_code = 
+					     08), 1990-Present
+	ce.data.30.ManufactureAHECurr	  -  Seasonal,Unseasonal, Manufacturing (supersector 
+				     	     code = 30, 31, 32), Avg Hourly Earnings,
+				     	     Hourly Earnings Excluding Overtime 
+				     	     (data_type_code = 08, 33), 1990-Present
+	ce.data.31.ServProvTradeAHECurr   -  Seasonal,Unseasonal, Service-prov, Trade (supersector 
+				     	     code = 07, 08, 40 - 42), Avg Hourly Earnings 
+				     	     (data_type_code = 08), 1990-Present
+	ce.data.32.TransWhUtsAHECurr	  -  Seasonal,Unseasonal, Transportation and warehousing, Utilities  
+					     (supersector code = 43 - 44), Avg Hourly Earnings 
+				     	     (data_type_code = 08), 1990-Present
+	ce.data.33.InfoAHECurr		  -  Seasonal,Unseasonal, Information (supersector code
+					     =50), Avg Hourly Earnings (data_type_code = 
+					     08), 1990-Present
+	ce.data.34.FinActAHECurr	  -  Seasonal,Unseasonal, Financial Activities (supersector code = 
+				     	     55), Avg Hourly Earnings (data_type_code = 08), 
+					     1990-Present
+	ce.data.35.ProfBusAHECurr	  -  Seasonal,Unseasonal, Professional and Business Services 
+					     (supersector code = 60), Avg Hourly Earnings 
+					     (data_type_code = 08), 1990-Present
+	ce.data.36.EducHealthAHECurr	  -  Seasonal,Unseasonal, Education and Health Services 
+					     (supersector code = 65), Avg Hourly Earnings 
+					     (data_type_code = 08), 1990-Present
+	ce.data.37.LeisHospAHECurr	  -  Seasonal,Unseasonal, Leisure and Hospitality 
+					     (supersector code = 70), Avg Hourly Earnings 
+					     (data_type_code = 08), 1990-Present
+	ce.data.38.OtherServicesAHECurr	  -  Seasonal,Unseasonal, Other Services (supersector code = 
+				     	     80), Avg Hourly Earnings (data_type_code = 08), 
+					     1990-Present
+	ce.data.39.TotMinConAWCurr	  -  Seasonal,Unseasonal, Total priv, Goods prod, 
+				     	     Mining and Logging, Construction 
+					     (supersector code = 05, 06, 10, 20), 
+					     Avg Weekly Hours, Avg Weekly Earnings 
+					     (data_type_code = 07, 30), 1990-Present
+	ce.data.30.ManufactureAWCurr	  -  Seasonal,Unseasonal, Manufacturing (supersector 
+				     	     code = 30, 31, 32), Avg Weekly Hours, Avg Weekly
+					     Earnings, Avg Weekly Overtime Hours
+				     	     (data_type_code = 07, 30, 09), 1990-Present
+	ce.data.31.ServProvTradeAWCurr    -  Seasonal,Unseasonal, Service-providing, Trade (supersector 
+				     	     code = 07, 08, 40 - 42), Avg Weekly Hours, Avg 
+					     Weekly Earnings (data_type_code = 07, 30), 
+					     1990-Present
+	ce.data.32.TransWhUtsAWCurr	  -  Seasonal,Unseasonal, Transportation and warehousing, Utilities  
+					     (supersector code = 43 - 44), Avg Weekly Hours, 
+					     Avg Weekly Earnings (data_type_code = 07, 30),
+					     1990-Present
+	ce.data.33.InfoAWCurr		  -  Seasonal,Unseasonal, Information (supersector code
+					     =50), Avg Weekly Hours, Avg Weekly Earnings 
+					     (data_type_code = 07, 30), 1990-Present
+	ce.data.34.FinActAWCurr	  	  -  Seasonal,Unseasonal, Financial Activities (supersector code = 
+				     	     55), Avg Weekly Hours, Avg Weekly Earnings 
+					     (data_type_code = 07, 30), 1990-Present
+	ce.data.35.ProfBusAWCurr	  -  Unseasonal, Professional and Business Services 
+					     (supersector code = 60), Avg Weekly Hours, Avg
+					     Weekly Earnings (data_type_code = 07, 30), 
+					     1990-Present
+	ce.data.36.EducHealthAWCurr	  -  Seasonal,Unseasonal, Education and Health Services 
+					     (supersector code = 65), Avg Weekly Hours, Avg
+					     Weekly Earnings (data_type_code = 07, 30), 
+					     1990-Present
+	ce.data.37.LeisHospAWCurr	  -  Seasonal,Unseasonal, Leisure and Hospitality 
+					     (supersector code = 70), Avg Weekly Hours, Avg
+					     Weekly Earnings (data_type_code = 07, 30), 
+					     1990-Present
+	ce.data.38.OtherServicesAWCurr	  -  Seasonal,Unseasonal, Other Services (supersector code = 
+				     	     80), Avg Weekly Hours, Avg WeeklyEarnings 
+					     (data_type_code = 07, 30), 1990-Present
+	ce.data.39.TotMinConOtherCurr	  -  Seasonal,Unseasonal, Total priv, Goods-prod, 
+				     	     Mining and Logging, Construction 
+					     (supersector code = 05, 06, 10, 20), Other, 
+					     Index of Aggregate Weekly Hours, Index of 
+					     Aggregate Weekly Payrolls, Diffusion Index 
+					     (12-month) (data_type_code = 34, 35, 24), 
+					     1990-Present
+	ce.data.40.ManufactureOtherCurr	  -  Seasonal,Unseasonal, Manufacturing (supersector 
+				     	     code = 30, 31, 32), Other, Index of
+				     	     Aggregate Weekly Hours, Index of
+				     	     Aggregate Weekly Payrolls, Diffusion
+				     	     Index (12-month) (data_type_code = 
+				     	     34, 35, 24) 1990-Present
+	ce.data.41.ServProvTradeOtherCurr -  Seasonal,Unseasonal, Service-providing, Trade (supersector 
+				     	     code = 07, 08, 40 - 42), Other, Index of
+				     	     Aggregate Weekly Hours, Index of
+				     	     Aggregate Weekly Payrolls
+				     	     (data_type_code = 34, 35) 1990-Present
+	ce.data.42.TransWhUtsOtherCurr	  -  Seasonal,Unseasonal, Transportation and warehousing, Utilities  
+					     (supersector code = 43 - 44), Other, 
+					     Index of Aggregate Weekly Hours, Index 
+				     	     of Aggregate Weekly Payrolls 
+					     (data_type_code = 34, 35) 1990-Present
+	ce.data.43.InfoOtherCurr	  -  Seasonal,Unseasonal, Information (supersector code = 50),
+                                             Other, Index of Aggregate Weekly Hours, 
+					     Index of Aggregate Weekly Payrolls
+					     (data_type_code = 34, 35) 1990-Present
+	ce.data.44.FinActOtherCurr	  -  Seasonal,Unseasonal, Financial Activities (supersector code =
+					     55), Other, Index of Aggregate Weekly Hours, 
+					     Index of Aggregate Weekly Payrolls
+					     (data_type_code = 34, 35) 1990-Present
+	ce.data.45.ProfBusOtherCurr	  -  Seasonal,Unseasonal, Professional and Business Services 
+					     (supersector code = 60), Other, Index of 
+					     Aggregate Weekly Hours, Index of Aggregate 
+					     Weekly Payrolls (data_type_code = 34, 35) 
+					     1990-Present
+	ce.data.46.EducHealthOtherCurr	  -  Seasonal,Unseasonal, Education and Health Services 
+					     (supersector code = 65), Other, Index of 
+					     Aggregate Weekly Hours, Index of Aggregate 
+					     Weekly Payrolls (data_type_code = 34, 35) 
+					     1990-Present
+	ce.data.47.LeisHospOtherCurr	  -  Seasonal,Unseasonal, Leisure and Hospitality 
+					     (supersector code = 70), Other, Index of 
+					     Aggregate Weekly Hours, Index of Aggregate 
+					     Weekly Payrolls (data_type_code = 34, 35) 
+					     1990-Present
+	ce.data.48.OtherServicesOtherCurr -  Seasonal,Unseasonal, Other Services (supersector code = 
+				     	     80), Other, Index of 
+					     Aggregate Weekly Hours, Index of Aggregate 
+					     Weekly Payrolls (data_type_code = 34, 35) 
+					     1990-Present
+	ce.data.49.TotMinConAEHist	  -  Seasonal,Unseasonal, Total, Tot priv, Goods 
+				     	     prod, Mining and Logging, 
+					     Construction (supersector  
+				     	     00, 05, 06, 10, 20), All Employees
+					     (data_type_code = 01), Pre-1990
+	ce.data.50.ManufactureAEHist	  -  Seasonal,Unseasonal, Manufacturing (supersector
+				     	     code = 30, 31, 32), All Employees 
+		 			     (data_type_code = 01), Pre-1990
+	ce.data.51.ServProvTradeAEHist    -  Seasonal,Unseasonal, Service-providing, Trade (supersector 
+				     	     code = 07, 08, 40 - 42), All Employees 
+				     	     (data_type_code = 01), Pre-1990
+	ce.data.52.TransWhUtsAEHist	  -  Seasonal,Unseasonal, Transportation and Warehousing,
+					     Utilities (supersector code = 43 - 44),
+					     All Employees (data_type_code = 01), 
+					     Pre-1990
+	ce.data.53.InfoAEHist		  -  Seasonal,Unseasonal, Information (supersector code
+					     = 50), All Employees (data_type_code = 
+					     01), Pre-1990
+	ce.data.54.FinActAEHist		  -  Seasonal,Unseasonal, Financial Activities (supersector
+					     code = 55), All Employees (data_type_code = 
+				     	     01), Pre-1990
+	ce.data.55.ProfBusAEHist	  -  Seasonal,Unseasonal, Professional and Business Services
+					     (supersector code = 60), All Employees 
+					     (data_type_code = 01), Pre-1990
+	ce.data.56.EducHealthAEHist	  -  Seasonal,Unseasonal, Education and Health Services
+					     (supersector code = 65), All Employees 
+					     (data_type_code = 01), Pre-1990
+	ce.data.57.LeisHospAEHist	  -  Seasonal,Unseasonal, Leisure and Hospitality
+					     (supersector code = 70), All Employees 
+					     (data_type_code = 01), Pre-1990
+	ce.data.58.OtherServicesAEHist	  -  Seasonal,Unseasonal, Other Services (supersector code = 
+				     	     80), All Employees (data_type_code = 01),
+				     	     Pre-1990
+	ce.data.59.GovtAEHist		  -  Seasonal,Unseasonal, Government (supersector code = 
+				     	     90), All Employees (data_type_code = 
+				     	     01), Pre-1990
+	ce.data.60.TotMinConWWPWHist	  -  Seasonal,Unseasonal, Total, Tot priv, Goods-prod,
+				     	     Mining and Logging, Construction 
+					     (supersector code = 00, 05, 06, 10, 20), 
+					     Women, Production Workers (data_type_code 
+					     = 10, 06), Pre-1990
+	ce.data.61.ManufactureWWPWHist	  -  Seasonal,Unseasonal, Manufacturing (supersector
+				     	     code = 30, 31, 32), Women, Production  
+				     	     Workers (data_type_code = 10, 06), 
+				     	     Pre-1990
+	ce.data.62.ServProvTradeWWPWHist  -  Seasonal,Unseasonal, Service providing, Trade (supersector 
+				     	     code = 07, 08, 40 - 42), Women, Production 
+				     	     Workers (data_type_code = 10, 06), 
+				     	     Pre-1990
+	ce.data.63.TransWhUtsWWPWHist	  -  Seasonal,Unseasonal, Transportation and warehousing,
+					     Utilities (supersector code = 43 - 44), 
+					     Women, Production Workers (data_type_code 
+					     = 10, 06), Pre-1990
+	ce.data.64.InfoWWPWHist		  -  Seasonal,Unseasonal, Information (supersector code 
+					     = 50), Women, Production Workers (data_type_code 
+					     = 10, 06), Pre-1990
+	ce.data.65.FinActWWPWHist	  -  Seasonal,Unseasonal, Financial Activities (supersector 
+					     code = 55), Women, Production Workers 
+					     (data_type_code = 10, 06), Pre-1990
+	ce.data.66.ProfBusWWPWHist	  -  Seasonal,Unseasonal, Professional and Business Services
+					     (supersector code = 60), Women, Production 
+					     Workers (data_type_code = 10, 06), Pre-1990
+	ce.data.67.EducHealthWWPWHist	  -  Seasonal,Unseasonal, Education and Health Services
+                                             (supersector code = 65), Women, Production 
+					     Workers (data_type_code = 10, 06), Pre-1990
+	ce.data.68.LeisHospWWPWHist	  -  Seasonal,Unseasonal, Leisure and Hospitality 
+					     (supersector code = 70), Women, Production 
+					     Workers (data_type_code = 10, 06), Pre-1990
+	ce.data.69.OtherServicesWWPWHist  -  Seasonal,Unseasonal, Other Services (supersector code = 
+					     80), Women, Production Workers (data_type_code 
+					     = 10, 06), Pre-1990
+	ce.data.70.GovtWWHist		  -  Seasonal,Unseasonal, Government (supersector code = 
+					     90), Women, (data_type_code = 10), 
+					     Pre-1990
+	ce.data.71.TotMinConAHEHist	  -  Seasonal,Unseasonal, Total priv, Goods-prod, 
+				     	     Mining and Logging, Construction 
+					     (supersector code = 05, 06, 10, 20), 
+					     Avg Hourly Earnings (data_type_code = 
+					     08), Pre-1990
+	ce.data.72.ManufactureAHEHist	  -  Seasonal,Unseasonal, Manufacturing (supersector 
+				     	     code = 30, 31, 32), Avg Hourly Earnings,
+				     	     Hourly Earnings Excluding Overtime 
+				     	     (data_type_code = 08, 33), Pre-1990
+	ce.data.73.ServProvTradeAHEHist   -  Seasonal,Unseasonal, Service-providing, Trade (supersector 
+				     	     code = 07, 08, 40 - 42), Avg Hourly Earnings 
+				     	     (data_type_code = 08), Pre-1990
+	ce.data.74.TransWhUtsAHEHist	  -  Seasonal,Unseasonal, Transportation and warehousing, Utilities 
+					     (supersector code = 43 - 44), Avg Hourly Earnings 
+				     	     (data_type_code = 08), Pre-1990
+	ce.data.75.InfoAHEHist		  -  Seasonal,Unseasonal, Information (supersector code
+					     =50), Avg Hourly Earnings (data_type_code = 
+					     08), Pre-1990
+	ce.data.76.FinActAHEHist	  -  Seasonal,Unseasonal, Financial Activities (supersector code = 
+				     	     55), Avg Hourly Earnings (data_type_code = 08), 
+					     Pre-1990
+	ce.data.77.ProfBusAHEHist	  -  Seasonal,Unseasonal, Professional and Business Services 
+					     (supersector code = 60), Avg Hourly Earnings 
+					     (data_type_code = 08), Pre-1990
+	ce.data.78.EducHealthAHEHist	  -  Seasonal,Unseasonal, Education and Health Services 
+					     (supersector code = 65), Avg Hourly Earnings 
+					     (data_type_code = 08), Pre-1990
+	ce.data.79.LeisHospAHEHist	  -  Seasonal,Unseasonal, Leisure and Hospitality 
+					     (supersector code = 70), Avg Hourly Earnings 
+					     (data_type_code = 08), Pre-1990
+	ce.data.80.OtherServicesAHEHist	  -  Seasonal,Unseasonal, Other Services (supersector code = 
+				     	     80), Avg Hourly Earnings (data_type_code = 08), 
+					     Pre-1990
+	ce.data.81.TotMinConAWHHist	  -  Seasonal,Unseasonal, Total priv, Goods-prod, 
+				     	     Mining and Logging, Construction 
+					     (supersector code = 05, 06, 10, 20), 
+					     Avg Weekly Hours, Avg Weekly Earnings 
+					     (data_type_code = 07, 30), Pre-1990
+	ce.data.82.ManufactureAWHHist	  -  Seasonal,Unseasonal, Manufacturing (supersector 
+				     	     code = 30, 31, 32), Avg Weekly Hours, Avg Weekly
+					     Earnings, Avg Weekly Overtime Hours
+				     	     (data_type_code = 07, 30, 09), Pre-1990
+	ce.data.83.ServProvTradeAWHHist  -   Seasonal,Unseasonal, Service-providing, Trade (supersector 
+				     	     code = 07, 08, 40 - 42), Avg Weekly Hours, Avg 
+					     Weekly Earnings (data_type_code = 07, 30), 
+					     Pre-1990
+	ce.data.84.TransWhUtsAWHHist	  -  Seasonal,Unseasonal, Transportation and warehousing, Utilities 
+					     (supersector code = 43 - 44), Avg Weekly Hours, 
+					     Avg Weekly Earnings (data_type_code = 07, 30),
+					     Pre-1990
+	ce.data.85.InfoAWHHist		  -  Seasonal,Unseasonal, Information (supersector code
+					     =50), Avg Weekly Hours, Avg Weekly Earnings 
+					     (data_type_code = 07, 30), Pre-1990
+	ce.data.86.FinActeAWHHist	  -  Seasonal,Unseasonal, Financial Activities (supersector code = 
+				     	     55), Avg Weekly Hours, Avg Weekly Earnings 
+					     (data_type_code = 07, 30), Pre-1990
+	ce.data.87.ProfBusAWHHist	  -  Seasonal,Unseasonal, Professional and Business Services 
+					     (supersector code = 60), Avg Weekly Hours, Avg
+					     Weekly Earnings (data_type_code = 07, 30), 
+					     Pre-1990
+	ce.data.88.EducHealthAWHHist	  -  Seasonal,Unseasonal, Education and Health Services 
+					     (supersector code = 65), Avg Weekly Hours, Avg
+					     Weekly Earnings (data_type_code = 07, 30), 
+					     Pre-1990
+	ce.data.89.LeisHospAWHHist	  -  Seasonal,Unseasonal, Leisure and Hospitality 
+					     (supersector code = 70), Avg Weekly Hours, Avg
+					     Weekly Earnings (data_type_code = 07, 30), 
+					     Pre-1990
+	ce.data.90.OtherServicesAWHHist	  -  Seasonal,Unseasonal, Other Services (supersector code = 
+				     	     80), Avg Weekly Hours, Avg WeeklyEarnings 
+					     (data_type_code = 07, 30), Pre-1990
+	ce.data.91.TotMinConOtherHist	  -  Seasonal,Unseasonal, Total priv, Goods-producing, 
+				     	     Mining and Logging, Construction 
+					     (supersector code = 05, 06, 10, 20), Other, 
+					     Index of Aggregate Weekly Hours, Index of 
+					     Aggregate Weekly Payrolls, Diffusion Index 
+					     (12-month) (data_type_code = 34, 35, 24), 
+					     Pre-1990
+	ce.data.92.ManufactureOtherHist   -  Seasonal,Unseasonal, Manufacturing (supersector 
+				     	     code = 30, 31, 32), Other, Index of
+				     	     Aggregate Weekly Hours, Index of
+				     	     Aggregate Weekly Payrolls, Diffusion
+				     	     Index (12-month) (data_type_code = 
+				     	     34, 35, 24) Pre-1990
+	ce.data.93.ServProvTradeOtherHist -  Seasonal,Unseasonal, Service-providing, Trade (supersector 
+				     	     code = 07, 08, 40 - 42), Other, Index of
+				     	     Aggregate Weekly Hours, Index of
+				     	     Aggregate Weekly Payrolls
+				     	     (data_type_code = 34, 35) Pre-1990
+	ce.data.94.TransWhUtsOtherHist	  -  Seasonal,Unseasonal, Transportation and Warehousing, Utilities 
+					     (supersector code = 43 - 44), Other, 
+					     Index of Aggregate Weekly Hours, Index 
+				     	     of Aggregate Weekly Payrolls
+					     (data_type_code = 34, 35) Pre-1990
+	ce.data.95.InfoOtherHist	  -  Seasonal,Unseasonal, Information, (supersector code = 50) Other, 
+					     Index of Aggregate Weekly Hours, Index 
+				     	     of Aggregate Weekly Payrolls
+					     (data_type_code = 34, 35) Pre-1990
+	ce.data.96.FinActOtherHist	  -  Seasonal,Unseasonal, Financial Activities (supersector code =
+					     55), Other, Index of Aggregate Weekly Hours, 
+					     Index of Aggregate Weekly Payrolls
+					     (data_type_code = 34, 35) Pre-1990
+	ce.data.97.ProfBusOtherHist	  -  Seasonal,Unseasonal, Professional and Business Services 
+					     (supersector code = 60), Other, Index of 
+					     Aggregate Weekly Hours, Index of Aggregate 
+					     Weekly Payrolls (data_type_code = 34, 35) 
+					     Pre-1990
+	ce.data.98.EducHealthOtherHist	  -  Seasonal,Unseasonal, Education and Health Services 
+					     (supersector code = 65), Other, Index of 
+					     Aggregate Weekly Hours, Index of Aggregate 
+					     Weekly Payrolls (data_type_code = 34, 35) 
+					     Pre-1990
+	ce.data.99.LeisHospOtherHist	  -  Seasonal,Unseasonal, Leisure and Hospitality 
+					     (supersector code = 70), Other, Index of 
+					     Aggregate Weekly Hours, Index of Aggregate 
+					     Weekly Payrolls (data_type_code = 34, 35) 
+					     Pre-1990
+	ce.data.100.OtherServicesOtherHist - Seasonal,Unseasonal, Other Services (supersector code = 
+				     	     80), Other, Index of 
+					     Aggregate Weekly Hours, Index of Aggregate 
+					     Weekly Payrolls (data_type_code = 34, 35) 
+					     Pre-1990	
+	ce.data.101.RealWeeklyEarnings	  -  Unseasonal, All, Real Average Hourly
+				     	     Earnings, Real Average Weekly Earnings
+				     	     (data_type_code = 32, 31) 1990-Present
+	ce.data.102.RealWeeklyEarningsHist-  Unseasonal, All, Real Average Hourly 
+				     	     Earnings, Real Average Weekly Earnings
+				             (data_type_code = 32, 31) Pre-1990
+	ce.contacts			  -  Contacts for ce survey 
+	ce.datatype			  -  Data_type_code 		mapping file
+	ce.doc				  -  General information
+	ce.footnote			  -  Footnote codes		mapping file
+	ce.industry			  -  Industry codes		mapping file
+	ce.period			  -  Period codes		mapping file
+	ce.series			  -  All series listed with series titles
+	ce.supersector			  -  Super sector codes		mapping file
+	
+=================================================================================
+Section 3
+=================================================================================
+The definition of a time series, its relationship to and the interrelationship
+among series, data and mapping files is detailed below:
+
+A time series refers to a set of data observed over an extended period of time
+over consistent time intervals (i.e. monthly, quarterly, semi-annually, annually).  
+BLS time series data are typically produced at monthly intervals and represent data 
+ranging from a specific consumer item in a specific geographical area whose price 
+is gathered monthly to a category of worker in a specific industry whose employment
+rate is being recorded monthly, etc.
+
+The FTP files are organized such that data users are provided with the following
+set of files to use in their efforts to interpret data files:
+
+a)  a series file (only one series file per survey)
+b)  mapping files
+c)  data files
+
+The series file contains a set of codes which, together, compose a series 
+identification code that serves to uniquely identify a single time series.  
+Additionally, the series file also contains the following series-level information:
+
+a) the period and year corresponding to the first data observation 
+b) the period and year corresponding to the most recent data observation. 
+
+The mapping files are definition files that contain explanatory text descriptions
+that correspond to each of the various codes contained within each series
+identification code.
+
+The data file contains one line of data for each observation period pertaining to a
+specific time series.  Each line contains a reference to the following:
+
+a) a series identification code
+b) year in which data is observed
+c) period for which data is observed (M13, Q05, and S03 indicate annual averages)
+d) value
+e) footnote code (if available)
+
+=================================================================================
+Section 4
+=================================================================================
+File Structure and Format: The following represents the file format used to define 
+ce.series.  Note that the Field Numbers are for reference only; they do not exist 
+in the database.  Data files are in ASCII text format.  Data elements are separated 
+by spaces; the first record of each file contains the column headers for the data
+elements stored in each field.  Each record ends with a new line character. 
+
+Field #/Data Element	Length		Value(Example)		
+
+1.  series_id		  17		CEU0500000001
+
+2.  supersector_code	   1		S or U
+
+3.  Published code         1	        P (published)
+
+4.  footnote_code	   10		I  (Independent Seasonaslly Adjusted)
+
+4.  supersector_code	   2		05
+
+5.  NAICS tabcode	   8		10113300  
+    (industry code) 
+6.  Datatype Code          2            01
+
+7.  Series title 	   104		3 parts to series title;
+                                          Datatype, 
+                                          Industry name, and
+                                          seasonality (adjusted or unadjusted)
+                                          
+
+The series_id (CEU0500000001) can be broken out into:
+
+Code					Value
+
+survey abbreviation	=		CE
+seasonal (code) 	=		U
+industry_code		=		05000000
+data_type_code		=		01
+
+==================================================================================
+Section 5
+==================================================================================
+File Structure and Format: The following represents the file format used to define
+each data file.  Note that the field numbers are for reference only; they do not 
+exist in the database.  Data files are in ASCII text format.  Data elements are 
+separated by spaces; the first record of each file contains the column headers for 
+the data elements stored in each field.  Each record ends with a new line character.  
+
+The ce.data file is partitioned into a number of separate files:  See Section 2
+
+The above-referenced data files have the following format:
+
+Field #/Data Element	Length		Value(Example)		
+
+1. series_id		  17		CEU0500000001
+
+2. year			   4		1988	
+
+3. period		   3		M01		
+
+4. value		  12      	103623	 	
+				 
+5. footnote_codes	  10		It varies
+				
+
+The series_id (CEU0500000001) can be broken out into:
+
+Code					Value
+
+survey abbreviation	=		CE
+seasonal (code) 	=		U
+industry_code		=		05000000
+data_type_code		=		01
+
+================================================================================
+Section 6
+================================================================================
+File Structure and Format:  The following represents the file format used to define
+each mapping file. Note that the field numbers are for reference only; they do not
+exist in the database.  Mapping files are in ASCII text format.  Data elements are
+separated by tabs; the first record of each file contains the column headers for the
+data elements stored in each field.  Each record ends with a new line character.  
+				
+File Name:  ce.datatype
+
+Field #/Data Element		Length		Value(Example)
+
+1.  data_type_code		2		30
+
+2.  data_type_text		100		Text
+
+
+File Name:  ce.footnote
+Field #/Data Element		Length		Value(Example)
+
+1. footnote_code		1		C
+
+2. footnote_text		100		Text
+
+
+File Name:  ce.industry
+
+Field #/Data Element		Length		Value(Example)
+
+1.  industry_code		8		05000000
+
+2.  naics_code			13		237
+
+3.  publishing_status		2		Internal Use Only
+
+4.  industry_name		80		Text
+				
+
+File Name:  ce.period
+
+Field #/Data Element		Length		Value(Example)
+
+1.  period			3		M01
+						
+2.  period_abbr			5		JUN
+
+3.  period_name			20		Text
+
+
+File Name:  ce.series
+
+Field #/Data Element		Length		Value(Example)
+
+1.  series_id			13		CES0500000001
+						
+2.  seasonal			1		S  or U
+
+3.  Published code      	1		P (published)  or U (unpublished)
+
+4.  footnote_code		1		I  (Independent Seasonaslly Adjusted)
+
+4.  supersector_code		2		05
+
+5.  NAICS tabcode		8		10113300  
+
+6.  Datatype Code               2               01
+
+7.  Series title 		104		3 parts to series title;
+                                                Datatype, 
+                                                Industry name, and
+                                                seasonality (adjusted or Unadjusted)
+				
+File Name:  ce.supersector
+
+Field #/Data Element		Length		Value(Example)
+
+1.  supersector_code		2		05
+						
+2.  supersector_name		60		Text
+
+
+
+
+
+
+
+
+
+
+=========================================================================================
+Section 7
+=========================================================================================
+EMPLOYMENT, HOURS, AND EARNINGS--NATIONAL (CE) DATABASE ELEMENTS
+
+Data Element	Length		Value(Example)			Description
+
+begin_period	3		M01-M13			Identifies first data observation
+				Q01-Q05			within the first year for which
+				Ex: M06=June		data is available for a given
+				(M=Monthly, M13=Annual	time series.
+				Avg, Q=Quarterly, Q05=
+				Annual Avg)
+
+begin_year	4		YYYY			Identifies first year for which 
+				Ex: 1976		data is available for a given
+							time series.
+
+data_type_code	2		30			Code identifying the datatype 
+							of the observation.
+
+data_type_text	100		Text			Datatype name of the observation.
+				Ex: Total employment	
+				
+end_period	3		M01-M13			Identifies last data observation
+				Q01-Q04			within the last year for which
+				Ex: M06=June		data is available for a given
+				(M=Monthly, M13=Annual	time series.
+				Avg, Q=Quarterly, Q05=
+				Annual Avg)
+				
+end_year	4		YYYY			Identifies last year for which 
+				Ex: 1992		data is available for a given
+							time series.
+							
+footnote_code	1		C			Identifies footnote for the data 
+							series.
+
+footnote_codes	10		It varies		Identifies footnotes for the data 
+							series.	
+							
+footnote_text	100		Text			Contains the text of the footnote.
+
+industry_code	8		05000000		Code identifying industry.
+							
+industry_name	80		Text			Name of industry.
+				Ex: Grocery Stores
+				
+naics_code	6		221122			North American Industry Classification 
+							System (NAICS) code.
+							
+period_abbr	5		Period name 		Abbreviation of period name.
+				abbreviation
+				Ex: JUN
+
+period		3		M01-M13			Identifies period for which
+				Q01-Q04			data is observed. 
+				Ex: M06=June		
+				(M=Monthly, M13=Annual
+				Avg, Q=Quarterly, Q05=
+				Annual Avg)
+
+period_name	20		Text			Full name of period to which 
+				Ex: June		the data observation refers.
+				
+publishing_	2		Internal Use only	Internal Use Only
+status
+
+seasonal	1		S=Seasonally		Code identifying whether the
+				  Adjusted 		data are seasonally adjusted.
+				U=Unadjusted
+
+series_id	17		CEU0500000001		Code identifying the specific 
+							series.
+							
+supersector_code 2		05			Code identifying the super sector.
+
+supersector_name 60		Text			Describes the super sector.
+
+value		12		103623			Data value for series.
+
+year		4		YYYY			Identifies year of observation.
+				Ex: 1990		
+		
+

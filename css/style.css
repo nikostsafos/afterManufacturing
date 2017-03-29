@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+/********** Document wide **********/
+* {font-family: 'Source Sans Pro' , 'Arial'; }
+
+/********** Navigation bar **********/
+nav {
+  z-index:1;
+  height: 35px;
+  top: 0px;
+  left: 0px;
+  background-color: #000;
+  width: 100%;
+  position: fixed;
+}
+
+nav p{
+  color: #fff;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/********** Header (initial image) **********/
+header {
+  background-color: #fff;
+  /*background-color: #000;*/
+  /*height: 100vh;*/
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  /*color: #fff;*/
+  margin: 0px auto;
+}
+
+header h1 {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+/********** Headings **********/
+h2, h3, h4 {
+  font-size: 100%;
+  text-align: center;
+  margin: 0px 0px;
+}
+
+/********** Body **********/
+body {
+  margin: 40px 0px;
+}
+
+p {
+  margin: 0px;
+  line-height: 1.4em;
+  margin-bottom: 15px;
+}
+
+#content {
+  max-width: 940px;
+  margin: auto;
+  width: 70%;
+}
+
+text {
+  font-size: 70%;
+}
+
+/********** D3 **********/
+
+#graphEmployment, #graphLaborForce {
+  display: inline;
+
+}
+.xaxis, .yaxis, .label {
+  font-size: 90%;
+}
+
+.graphFootnote {
+  line-height: 1.5em;
+  margin: 10px;
+  text-align: center;
+  font-size: 80%
+}
+
+.axis path,
+.axis line {
+  shape-rendering: crispEdges;
+}
+
+.path {
+  fill: #e0e0e0;  
+}
+
+.line {
+  fill: none;
+  stroke: #ca0020;
+  stroke-width: 2;
+}
+
+.bar:hover {
+  fill: #bcbcbc ;
+}
+
+/********** PANELS **********/
+.tab-panel { display: none;}
+
+.tab-panel.active {
+  display: block;
+  text-align: center;
+}
+
+.tab-panel p { margin: 20px;}
+
+.tab-list {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.tab-list li{
+  display: inline-table;
+  text-align: center;
+  list-style: none;
+  border-bottom: 3px;
+  color: #000;
+}
+
+.tab-list a {
+ color: #000;
+ text-decoration: none; 
+ padding: 0px 15px 0px;
+ display: block;
+ list-style: none;
+}
+
+/********** Mobile compatibility **********/
+@media only screen and (max-width: 960px) {
+
+  #content {
+    width: 80%;
+    margin: auto;
+    line-height: 2em;
+  }
+  
+}
+
+@media only screen and (max-width: 500px) {
+
+  /*nav { display: none; }*/
+
+  nav p{ display: none; }
+
+  #content {
+    font-size: 90%;
+    width: 94%;
+    margin: auto;
+    line-height: 2em;
+  }

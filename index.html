@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+  <head>
+    <title>After manufacturing, what?</title>
+    <meta property='og:title' content='After manufacturing, what?'/>
+    <meta property='og:type' content='website' />
+    <meta property='og:url' content='https://nikostsafos.github.io/afterManufacturing/' />
+    <meta property="og:image" content="img/cover.png" />
+    <meta name = 'viewport' content = 'width=device-width, initial-scale = 1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3-path.v1.min.js"></script>
+    <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.min.js"></script>
+  </head>
+  
+  <body>
+  
+    <nav><p>After manufacturing, what? by Nikos Tsafos</p></nav>
+    <header><h1>After manufacturing, what?</br>by Nikos Tsafos</h1>
+            <h2>March 30, 2017</h2>
+    </header>
+
+    <div id = 'content'>
+
+    <hr><h2>Introduction</h2><hr>
+
+    <p>The American economy has been reshaped in the last three quarters of a century—and no change has been more profound than the shift from manufacturing to services. In 1940, before the United States joined World War II, one in three non-farm jobs were in manufacturing—building durable and non-durable goods for (largely) domestic consumption. That share jumped briefly during the war, reaching a high of 38%, but has since declined steadily. In 2016, less than one in ten jobs in America had to do with manufacturing goods.</p>
+
+    <p>Even in absolute numbers the changes are staggering. In 1940, there were 9.5 million people who worked in manufacturing; in 2016, there were 12.4 million. Meanwhile, total jobs rose from 32 to 144 million. The American economy created 112 million jobs between 1940 and 2016; of those, only 2.3 million were in manufacturing. Even within manufacturing, all the growth came from building durable goods rather than non-durable goods—meaning machines, vehicles and aircraft, rather than food, beverages, paper and plastics. Employment in non-durable goods is actually lower than it was in 1940 even in absolute terms.</p>
+
+    <p>This decline in manufacturing has been associated with various political, economic and social phenomena. It is not my goal to explore those relationships. Instead, I am interested in a different question: what exactly does the American worker do instead? If not manufacturing, what?</p>
+   	
+    <hr><h2>Employment by sector: The big picture</h2><hr>
+
+    <p>The answer depends on the data we use. Are we interested in total jobs or relative change—what jobs people have or what has changed since 1940? How detailed do we want to be? Are "manufacturing" or "education and health" even meaningful groupings; or should we be talking about how many people work in bakeries or junior colleges or offices of dentists? Different details give slightly different answers.</p>
+
+    <p>Let's begin with the big picture: the relative decline in manufacturing jobs has been totally offset by the rise in three sectors: professional and business services; education and health services; and leisure and hospitality. (These groups only capture private-level jobs; they exclude any education or health jobs provided by the state.). The share of manufacturing jobs went from 31% in 1940 to 9% in 2016, a decline of 23 percentage points; by contrast, these three sectors jumped from 17% to 40%, also a rise of 23 percentage points. In effect, the American economy has moved from manufacturing to education, health, professional business services and leisure.</p>
+    
+          <div><h3>Employment by industry (as percent of total)</h3>
+               <div class = 'graph' id = 'employmentbySector'></div>
+               <p class = 'graphFootnote'>Source: Bureau of Labor Statistics, Current Employment Statistics</p>
+          </div>
+
+    <hr><h2>Where is the growth coming from?</h2><hr>
+
+    <p>These three sectors have grown rapidly, following similar but not identical trajectories. In absolute terms, they have been similar for a long time, although starting in 1990, education and health overtook the other two and built a lead—especially after 2005, as it been less susceptible to the ups and downs that the other two sectors have experienced.</p>
+
+    <p>But what exactly do these sectors mean? Is it education or health that is driving change? Leisure or hospitality? The data to answer this question is more limited—we don't have very detailed sub-sector information back to 1940. But we have good detail since 1990—and investing that period can still answer many of the broad questions that matter.</p> 
+
+    <p>To begin with, since 1990, the American economy added about 34.8 million jobs—and these three sub-sectors accounted for 78% of those jobs (27.2 million). Examine these sectors in detail and you get a very good picture of what Americans are doing instead of manufacturing.</p> 
+
+    <p>The groups below are somewhat arbitrary—they don't follow a strict statistical convention and they combine data series at different aggregation levels. But they are the mix that is most useful in understand what's happening—detailed enough so that descriptions have meaning but not too detailed that major sectors get so broken apart that one misses the forrest for the trees.</p> 
+
+    <div><h3>Employment by select sub-sectors (in millions)</h3>
+    <div class = 'graph' id = 'employmentbyTopEight'></div>
+    <p class = 'graphFootnote'>Source: Bureau of Labor Statistics, Current Employment Statistics</p>
+    </div>
+
+    <p>These eight sectors alone have added 20.1 million jobs since 1990: almost 6 in 10 jobs created in America over this 26-year period has come from these eight groupings.</p> 
+
+    <p>The largest single grouping is "food services and drinking," which added 4.9 million jobs—and that's most of the 6.3 million jobs that come under "leisure and hospitality."</p>
+
+    <p>Then comes ambulatory health care (+4.2 million), which means doctors' and dentists' offices, outpatient medical care, and so on. Social assistance (+2.5 million) includes caring for individuals, families, children or the elderly. Hospitals, and nursing and residential care make up the remainder of health care, and these have added 9.7 million jobs—meaning that "education and health" is mostly health (+9.7 million) and less so education (+1.8 million). It also means that of the 34.8 million jobs added since 1990, 28% have been in health care (9.7 million).</p>
+
+    <p>The other two categories are employment services and computer systems design, which is, effectively, IT. Together, these amounted to 3.6 million of the 9.3 million new jobs categorized under "professional and business services." The other major sub-categories (not shown) include management consulting (+830 thousand) and architecture and engineering (+470 thousand).</p>
+
+    <hr><h2>Conclusion</h2><hr>
+
+    <p>The transition away from manufacturing has meant a transition towards more services; and services has meant: 
+
+    <ul><li>Providing health care and social assistance (+9.7 million jobs);</li>
+        <li>Eating and drinking out (+4.9 million);</li>
+        <li>Helping companies find employees (+2 million);</li>
+        <li>Private education (+1.8 million), mostly colleges and universities;</li>
+        <li>Designing computer systems (+1.6 million); and</li>
+        <li>Management consulting (+830 thousand).</li></p>
+      </ul>
+
+    <p>This list is not exhaustive, but, in effect, we have three major groupings: leisure, health care, and efficiency (a loose way to group education, IT, employment services and management consulting).</p>
+
+    <p>What does this mean? There are various observations one can make about this data. First, it is hard to understand the health care debate in this country without appreciating that health care is, increasingly, what Americans do-how they earn their living and provide for themselves and their families. Second, there is a sizeable segment of the economy whose goal is to make things run better or more smoothly-in a positive spin, this could be understood in the context of improving efficiency. Alternatively, one could see this as interlinked with sub-standard services and business practices-inefficiencies that, ideally, should eventually disappear.</p>
+
+    <p>And this is, perhaps, is the final observation to make: what would happen if the United States were able to dramatically reduce the cost of health care? What if companies were run better and computer systems were easier to design and maintain and technology allowed employers and employees to find each other more easily? What would Americans do then? Surely, they would move on to the next thing that needed fixing. But one is left wondering: do people flock to the thing that needs fixing, or do people turning en masse to a new segment of the economy produce the kind of complexity that then requires more people to solve? Food for thought.</p>
+      
+    <hr><h2>Notes</h2><hr>
+    
+    <p>All data come from Bureau of Labor Statistics, <a href = 'https://www.bls.gov/ces/' target = '_blank'>Current Employment Statistics - CES (National)</a>. For more info visit the <a href='https://github.com/nikostsafos/stateEmployment' target = '_blank'>github</a> repository.</p>
+      	
+    <p class = 'graphFootnote'><a href="https://twitter.com/ntsafos" class="twitter-follow-button" data-show-count="false">Follow @ntsafos</a></p>
+      
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></h4>
+  	<script src='js/employmentbySector.js'></script>
+    <script src='js/employmentbyTopEight.js'></script>
+  	
+  	</div>
+  </body>
+
