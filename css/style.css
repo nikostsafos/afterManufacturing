@@ -146,7 +146,7 @@ text {
 @media only screen and (max-width: 960px) {
 
   #content {
-    font-size: 70%
+    /*font-size: 70%*/
     width: 80%;
     margin: auto;
     line-height: 2em;
@@ -167,13 +167,14 @@ text {
   nav p{ display: none; }
 
   #content {
-    font-size: 90%;
+    /*font-size: 90%;*/
     width: 94%;
     margin: auto;
     line-height: 2em;
   }
 
   table {
+  font-size: 85%;
   width: 95%;
   text-align: right;
   margin: auto;
