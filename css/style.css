@@ -162,9 +162,7 @@ text {
 
 @media only screen and (max-width: 500px) {
 
-  /*nav { display: none; }*/
-
-  nav p{ display: none; }
+  nav p { display: none; }
 
   #content {
     /*font-size: 90%;*/
@@ -178,4 +176,8 @@ text {
   width: 95%;
   text-align: right;
   margin: auto;
+}
+
+text { font-size: 70%; }
+
 }
